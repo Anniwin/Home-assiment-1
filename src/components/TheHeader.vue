@@ -1,9 +1,9 @@
 <template>
   <div class="header">
-      <div id="logo-container">
+      <div class="logo-container">
         <router-link to="/" ><img src="../assets/img/cupcakes & cookies.png" />Logo</router-link>
       </div>
-      <div id="header-links-container">
+      <div class="header-links-container">
         <div class="pink-border-box">
           <router-link to="/" ><img src="../assets/img/house.png" class="my-icon" />House</router-link>
         </div>
@@ -29,20 +29,44 @@ name: 'TheHeader'
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.header {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 10px;
+  }
+  .logo-container{
+    a {
+      display: block;
+      height: 82px;
+      width: 282px;
+
+    }
+  }
+  .header-links-container {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-gap: 10px;
+}
+@media (min-width: 1024px){
 .header {
   border: 1px solid gray;
   display: flex;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  //tablet
+   .header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  padding: 10px;
+  }
 
-#logo-container {
-  flex: 1;
 }
 
-#header-links-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
+
+
+
 </style>
